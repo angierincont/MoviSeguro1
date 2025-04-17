@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoviSeguro - Registro</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Firebase App (necesario para todos los servicios) -->
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+  
+  <!-- Firebase Auth -->
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+  
+  <!-- Firebase Firestore (si usas base de datos más adelante) -->
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Crear Cuenta</h1>
+    <div class="form-box">
+      <h2>Registro</h2>
+      <input type="text" id="nombre" placeholder="Nombre completo" />
+      <input type="tel" id="celular" placeholder="Número de celular" />
+      <input type="email" id="correo" required placeholder="Correo electrónico">
+
+
+      <div class="password-container">
+        <input type="password" id="passwordRegistro" placeholder="Contraseña" />
+        <button type="button" onclick="togglePassword('passwordRegistro')">👁️</button>
+      </div>
+
+      <div class="password-container">
+        <input type="password" id="confirmarPassword" placeholder="Confirmar contraseña" oninput="validarCoincidencia()" />
+        <span id="mensajeCoincidencia"></span>
+        <button type="button" onclick="togglePassword('confirmarPassword')">👁️</button>
+      </div>
+
+      <button onclick="registrarUsuario()">Registrarse</button>
+      <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a></p>
+    </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
