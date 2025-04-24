@@ -1,67 +1,94 @@
 body {
-    font-family: 'Segoe UI', sans-serif;
-    background: #eaf3fc;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+  background: #eaf3fc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 10px; /* Evita que pegue en bordes en móviles */
+  box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+}
+
+h1 {
+  color: #1a4a80;
+  margin-bottom: 20px;
+}
+
+.form-box {
+  background: white;
+  padding: 20px;
+  margin: 15px auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+input {
+  display: block;
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #1a4a80;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0e2f52;
+}
+
+.password-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-container input {
+  flex: 1;
+}
+
+.password-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 5px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 480px) {
+  body {
+      height: auto;
+      padding: 15px;
   }
-  
-  .container {
-    text-align: center;
-  }
-  
-  h1 {
-    color: #1a4a80;
-    margin-bottom: 20px;
-  }
-  
+
   .form-box {
-    background: white;
-    padding: 20px;
-    margin: 15px auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    max-width: 300px;
+      max-width: 100%;
+      padding: 15px 10px;
   }
-  
-  input {
-    display: block;
-    width: 90%;
-    margin: 10px auto;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
+
+  input, button, .password-container {
+      width: 100%;
+      margin: 8px 0;
+      box-sizing: border-box;
   }
-  
-  button {
-    padding: 10px 20px;
-    background-color: #1a4a80;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0e2f52;
-  }
-  
-  .password-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-  }
-  
-  .password-container input {
-    flex: 1;
-  }
-  
+
   .password-container button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    margin-left: 5px;
+      margin-left: 0;
+      padding: 10px;
+      font-size: 16px;
   }
-  
+}
