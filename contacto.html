@@ -1,239 +1,68 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Contacto | Mi Empresa</title>
-  <style>
-    /* Reset básico */
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | MovieSeguro</title>
+  <link rel="stylesheet" href="styles-index.css">
 
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f4f7f8;
-      color: #333;
-      line-height: 1.6;
-      padding: 20px;
-    }
-
-    h1 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #2c3e50;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    }
-
-    .contact-info, .contact-form {
-      padding: 20px;
-    }
-
-    /* Layout flex para pantallas grandes */
-    .flex-row {
-      display: flex;
-      gap: 30px;
-      justify-content: space-between;
-    }
-
-    .contact-info {
-      flex: 1;
-      border-right: 1px solid #ddd;
-    }
-
-    .contact-info h2 {
-      margin-bottom: 15px;
-      color: #2980b9;
-    }
-
-    .info-item {
-      margin-bottom: 15px;
-      font-size: 1.1em;
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .info-item svg {
-      fill: #2980b9;
-      width: 24px;
-      height: 24px;
-    }
-
-    /* Formulario */
-    .contact-form {
-      flex: 1;
-    }
-
-    .contact-form h2 {
-      margin-bottom: 15px;
-      color: #2980b9;
-    }
-
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    input, textarea {
-      padding: 12px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
-      transition: border-color 0.3s ease;
-    }
-
-    input:focus, textarea:focus {
-      border-color: #2980b9;
-      outline: none;
-    }
-
-    button {
-      background-color: #2980b9;
-      color: white;
-      border: none;
-      padding: 14px;
-      font-size: 1.1em;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #1c5980;
-    }
-
-    /* Botón flotante WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background-color: #25d366;
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 1000;
-      transition: background-color 0.3s ease;
-    }
-
-    .whatsapp-float:hover {
-      background-color: #1da851;
-    }
-
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .flex-row {
-        flex-direction: column;
-      }
-
-      .contact-info {
-        border-right: none;
-        border-bottom: 1px solid #ddd;
-        margin-bottom: 25px;
-      }
-    }
-  </style>
 </head>
 <body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="pagina-principal.html">Inicio</a></li>
+        <li><a href="#estaciones">Estaciones</a></li>
+        <li><a href="#seguridad">Seguridad</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <h1>Contacto</h1>
 
-  <div class="container">
-    <div class="flex-row">
+  <form id="formContacto">
+    <h2>Contáctanos</h2>
 
-      <section class="contact-info">
-        <h2>Información</h2>
-        <div class="info-item">
-          <!-- Teléfono icono -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.58.57 1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 5a1 1 0 011-1h3.5a1 1 0 011 1 11.36 11.36 0 00.57 3.58 1 1 0 01-.21 1.11l-2.24 2.1z"/>
-          </svg>
-          <span>+57 302636499</span>
-        </div>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ ]+" title="Solo letras">
 
-        <div class="info-item">
-          <!-- Email icono -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/>
-          </svg>
-          <span>contacto@miempresa.com</span>
-        </div>
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
 
-        <div class="info-item">
-          <!-- Location icono -->
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M12 2a7 7 0 00-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 00-7-7zm0 9.5a2.5 2.5 0 112.5-2.5 2.5 2.5 0 01-2.5 2.5z"/>
-          </svg>
-          <span>Calle 123 #45-67, Bogotá, Colombia</span>
-        </div>
-      </section>
+    <label for="mensaje">Mensaje:</label>
+    <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
-      <section class="contact-form">
-        <h2>Envía un mensaje</h2>
-        <form id="contactForm">
-          <input type="text" name="name" placeholder="Tu nombre" required />
-          <input type="email" name="email" placeholder="Tu correo electrónico" required />
-          <textarea name="message" rows="5" placeholder="Tu mensaje" required></textarea>
-          <button type="submit">Enviar</button>
-        </form>
-      </section>
+    <button type="submit">Enviar mensaje</button>
 
-    </div>
-  </div>
-
-  <!-- Botón WhatsApp -->
-  <a
-    href="https://wa.me/573026364999"
-    target="_blank"
-    rel="noopener"
-    class="whatsapp-float"
-    aria-label="Chatear por WhatsApp"
-  >
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-      <path d="M20.52 3.48A11.77 11.77 0 0012.02.5C6.13.5 1.53 5.11 1.53 11a10.8 10.8 0 001.88 6L.1 23.15l6.28-2.06a10.84 10.84 0 005.64 1.5c5.9 0 10.5-4.6 10.5-10.5a11.35 11.35 0 00-2.94-7.1zM12 20.23a8.68 8.68 0 01-4.42-1.25l-.32-.2-3.71 1.22 1.24-3.63-.21-.35A8.66 8.66 0 113.27 11a8.7 8.7 0 018.7 8.7zm4.75-6.41c-.22-.11-1.3-.64-1.5-.72s-.37-.11-.52.11-.6.72-.74.87-.27.16-.5.05a6.28 6.28 0 01-1.85-1.14 7 7 0 01-1.3-1.62c-.14-.25 0-.39.11-.5.11-.11.25-.27.37-.41a.52.52 0 00.08-.54c-.08-.22-.52-1.25-.72-1.7s-.38-.39-.52-.39-.27-.01-.41-.01a.7.7 0 00-.52.26 2.22 2.22 0 00-.67.81 2.85 2.85 0 001.25 3.87 5.36 5.36 0 002.37 1.56 3.07 3.07 0 001.33.15 2.34 2.34 0 001.6-1.17c.16-.28.16-.52.11-.72z"/>
-    </svg>
-  </a>
+    <div class="mensaje" id="estadoMensaje"></div>
+  </form>
 
   <!-- EmailJS SDK -->
-  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    (function(){
-      emailjs.init("service_b8h5s3w");  // <--- Cambia esto por tu User ID
+    (function() {
+      emailjs.init("YOUR_PUBLIC_KEY"); // Reemplaza con tu public key
     })();
 
-    document.getElementById('contactForm').addEventListener('submit', function(event) {
-      event.preventDefault();
+    document.getElementById("formContacto").addEventListener("submit", function(e) {
+      e.preventDefault();
 
-      emailjs.sendForm('service_b8h5s3w', 'TU_TEMPLATE_ID', this) // <--- Cambia TU_TEMPLATE_ID
-        .then(function() {
-          alert('Mensaje enviado correctamente, ¡gracias!');
-          document.getElementById('contactForm').reset();
-        }, function(error) {
-          alert('Error al enviar el mensaje. Inténtalo más tarde.');
-          console.error('FAILED...', error);
-        });
+      const estado = document.getElementById("estadoMensaje");
+
+      emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", {
+        nombre: document.getElementById("nombre").value,
+        email: document.getElementById("email").value,
+        mensaje: document.getElementById("mensaje").value
+      })
+      .then(function(response) {
+        estado.innerText = "✅ Mensaje enviado correctamente.";
+        estado.style.color = "green";
+        document.getElementById("formContacto").reset();
+      }, function(error) {
+        estado.innerText = "❌ Error al enviar. Intenta de nuevo.";
+        estado.style.color = "red";
+        console.error("EmailJS Error:", error);
+      });
     });
   </script>
 
