@@ -15,16 +15,25 @@ const firebaseConfig = {
   const auth = firebase.auth();
   const db = firebase.firestore();
   
-  // Registrar Usuario
   function registrarUsuario() {
     const nombre = document.getElementById("nombre").value;
     const celular = document.getElementById("celular").value;
-    const email = document.getElementById("emailRegistro").value;
+    const email = document.getElementById("correo").value; // ← Corregido aquí
     const password = document.getElementById("passwordRegistro").value;
     const confirmar = document.getElementById("confirmarPassword").value;
   
     if (password !== confirmar) {
       alert("❌ Las contraseñas no coinciden");
+      return;
+    }
+  
+    if (password.length > 8) {
+      alert("❌ La contraseña debe tener máximo 8 caracteres.");
+      return;
+    }
+  
+    if (!nombre.match(/^[a-zA-Z\s]+$/)) {
+      alert("❌ El nombre solo debe contener letras y espacios.");
       return;
     }
   
@@ -38,12 +47,14 @@ const firebaseConfig = {
       })
       .then(() => {
         alert("✅ Usuario registrado correctamente");
-        window.location.href = "login.html";
+        window.location.href = "index.html";
       })
       .catch(error => {
         alert("❌ Error: el usuario ya existe o los datos son incorrectos.");
+        console.error(error);
       });
   }
+  
   
   // Iniciar sesión
   function iniciarSesion() {
