@@ -1,58 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MovieSeguro - Página Principal</title>
-  <link rel="stylesheet" href="styles-index.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movilidad Bogotá</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header>
-    <nav>
-      <ul>
-        <li><a href="#home">Inicio</a></li>
-        <li><a href="#estaciones">Estaciones</a></li>
-        <li><a href="#seguridad">Seguridad</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-      </ul>
-    </nav>
+    <h1 id="titulo">Movilidad Bogotá</h1>
+    <select id="languageSelect">
+      <option value="es">Español</option>
+      <option value="en">English</option>
+    </select>
   </header>
 
-  <main>
-    <section id="home">
-      <h1>Bienvenido a MoviSeguro</h1>
-      <p>La mejor aplicación para mejorar la seguridad y eficiencia del transporte público en Bogotá.</p>
-    </section>
+  <main id="contenidoPrincipal">
+    <div id="tab-content">Bienvenido a la app</div>
   </main>
 
-  <div class="icon-tabs">
-    <a href="rutas.html" class="tab">
-      <img src="img/rutas.jpg" alt="Rutas">
-      <p>Rutas</p>
-    </a>
-    <a href="estaciones.html" class="tab">
-      <img src="img/estaciones.jpg" alt="Estaciones">
-      <p>Estaciones</p>
-    </a>
-    <a href="mapaTM.html" class="tab">
-      <img src="img/mapa tm.jpeg" alt="Mapa TM">
-      <p style="color: purple;">Mapa TM</p>
-    </a>
-    <a href="planea.html" class="tab">
-      <img src="img/planea.jpg" alt="Planea tu viaje">
-      <p>Planea tu viaje</p>
-    </a>
-    <a href="emergencias.html" class="tab">
-      <img src="img/emergencia.png" alt="Emergencias">
-      <p>Emergencias</p>
-    </a>
-  </div>
+  <nav class="tab-bar">
+    <button onclick="cambiarTab('planear')">🧭 <span id="tabPlanear">Planear</span></button>
+    <button onclick="cambiarTab('rutas')">🚌 <span id="tabRutas">Rutas</span></button>
+    <button onclick="cambiarTab('emergencias')">🚨 <span id="tabEmergencias">Emergencias</span></button>
+    <button onclick="cambiarTab('camaras')">📷 <span id="tabCamaras">Cámaras</span></button>
+    <button onclick="cambiarTab('menu')">⚙️ <span id="tabMenu">Menú</span></button>
+  </nav>
   
+  <!-- Contenedor donde irá el contenido dinámico -->
+<div id="tab-content" class="contenido-tab">
+  <!-- Aquí se cargará el contenido con JavaScript -->
+</div>
 
-  <footer>
-    <p>&copy; 2025 MovieSeguro. Todos los derechos reservados.</p>
-  </footer>
 
-  <script src="script-index.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore-compat.js"></script>
+<script src="app.js"></script>
+
 </body>
 </html>

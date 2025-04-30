@@ -96,3 +96,104 @@ button:hover {
     font-size: 16px;
   }
 }
+
+/*pagina principal*/
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+header {
+  padding: 10px;
+  background: #003366;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  flex-grow: 1;
+  padding: 16px;
+  background-color: #f0f0f0;
+  overflow-y: auto;
+}
+
+.tab-bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: #004c99;
+  padding: 10px 0;
+}
+
+.tab-bar button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 16px;
+  flex-grow: 1;
+  text-align: center;
+}
+
+.tab-bar button:hover {
+  background-color: #003366;
+}
+
+/*PESTAÑAS*/
+.contenido-tab {
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+}
+
+.input-tab {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+.boton-tab {
+  padding: 10px 20px;
+  background-color: #0077cc;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.boton-tab.rojo {
+  background-color: #d9534f;
+}
+
+.lista-tab li {
+  padding: 5px 0;
+}
+
+.camara-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.camara-box {
+  background-color: #eee;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.estado {
+  font-size: 0.8em;
+  color: #555;
+}
+
